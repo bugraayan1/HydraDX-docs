@@ -1,35 +1,35 @@
 ---
-id: polkadotjs_apps_local 
-title: Connect to a Local Node 
+kimlik: polkadotjs_apps_local
+başlık: Bir Yerel Düğüme Bağlan
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+useBaseUrl dosyasını '@docusaurus/useBaseUrl'den içe aktarın;
 
-You can use the Polkadot/apps to connect to your local HydraDX node. For this purpose, you need to have access to port `9944` which is used for RPC websocket connections.
+Yerel HydraDX düğümünüze bağlanmak için Polkadot/uygulamaları kullanabilirsiniz. Bu amaçla, RPC websocket bağlantıları için kullanılan '9944' bağlantı noktasına erişiminiz olmalıdır.
 
-:::warning
+:::uyarı
 
-If you are running the node as a validator, we highly recommend that you blacklist port `9944` for remote connections. This port could be abused by third parties to degrade the performance of your node, which may result in slashing and involuntary loss of funds. You should use port `9944` to connect to your validator node only when the node is in your local network.
+Düğümü doğrulayıcı olarak çalıştırıyorsanız, uzak bağlantılar için '9944' bağlantı noktasını kara listeye almanızı kesinlikle öneririz. Bu bağlantı noktası, düğümünüzün performansını düşürmek için üçüncü taraflarca kötüye kullanılabilir, bu da kesintiye ve istemsiz para kaybına neden olabilir. Doğrulayıcı düğümünüze yalnızca düğüm yerel ağınızdayken bağlanmak için '9944' bağlantı noktasını kullanmalısınız.
 
 :::
 
-### Accessing your local node using Polkadot/apps {#accessing-your-local-node-using-polkadotapps}
+### Polkadot/apps kullanarak yerel düğümünüze erişme {#erişim-your-local-node-using-polkadotapps}
 
-To access your node, open [Polkadot/apps](https://polkadot.js.org/apps/) and click in the upper left corner to change the network.
+Düğümünüze erişmek için [Polkadot/apps](https://polkadot.js.org/apps/) dosyasını açın ve ağı değiştirmek için sol üst köşedeki simgesine tıklayın.
 
 <div>
   <img src={useBaseUrl('/polkadotjs-apps/PolkadotJS-APPS-1.png')} />
 </div>
 
-After opening the menu, click on **Development** and select **Local node**.
-<div style={{textAlign: 'center'}}>
+Menüyü açtıktan sonra **Geliştirme**'ye tıklayın ve **Yerel düğüm**'ü seçin.
+<div stili={{textAlign: 'center'}}>
   <img src={useBaseUrl('/polkadotjs-apps/local-1.png')} />
 </div>
 
-Adjust the IP if necessary and click on ***Switch*** to switch to your local node.
+Gerekirse IP'yi ayarlayın ve yerel düğümünüze geçmek için ***Değiştir***'e tıklayın.
 
-<div style={{textAlign: 'center'}}>
+<div stili={{textAlign: 'center'}}>
   <img src={useBaseUrl('/polkadotjs-apps/local-2.png')} />
 </div>
 
-Now you should be connected to your local node and be able to interact with it.
+Artık yerel düğümünüze bağlı olmanız ve onunla etkileşime geçebilmeniz gerekir.
