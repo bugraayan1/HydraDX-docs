@@ -1,34 +1,34 @@
 ---
-id: polkadotjs_apps_public 
-title: Connect to a Public Node
+kimlik: polkadotjs_apps_public
+başlık: Bir Genel Düğüme Bağlanma
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+useBaseUrl dosyasını '@docusaurus/useBaseUrl'den içe aktarın;
 
-There are two public RPC nodes which are maintained by HydraDX and our partners. You can use these nodes for interacting with Snakenet. You can directly connect to a public node with Polkadot/apps by clicking on the links below:
+HydraDX ve ortaklarımız tarafından bakımı yapılan iki genel RPC düğümü vardır. Snakenet ile etkileşim kurmak için bu düğümleri kullanabilirsiniz. Aşağıdaki bağlantılara tıklayarak Polkadot/apps ile doğrudan bir genel düğüme bağlanabilirsiniz:
 
-* [RPC node hosted by HydraDX](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-01.snakenet.hydradx.io#/explorer)
-* [RPC node hosted by Intergalactic](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-02.snakenet.hydradx.io#/explorer)
+* [HydraDX tarafından barındırılan RPC düğümü](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-01.snakenet.hydradx.io#/explorer)
+* [Intergalactic tarafından barındırılan RPC düğümü](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-02.snakenet.hydradx.io#/explorer)
 
 
-## Connect manually to an RPC node {#connect-manually-to-an-rpc-node}
+## Bir RPC düğümüne manuel olarak bağlanın {#manuel-to-an-rpc-node}
 
-To access a public RPC node manually, open the [Polkadot/apps](https://polkadot.js.org/apps/) and click in the upper left corner to change the network.
+Genel bir RPC düğümüne manuel olarak erişmek için [Polkadot/apps](https://polkadot.js.org/apps/) dosyasını açın ve ağı değiştirmek için sol üst köşeye tıklayın.
 
-<div style={{textAlign: 'center'}}>
+<div stili={{textAlign: 'center'}}>
   <img src={useBaseUrl('/polkadotjs-apps/PolkadotJS-APPS-1.png')} />
 </div>
 
-Click on **LIVE NETWORKS** and select **HydraDX**.
+**CANLI AĞLAR**'a tıklayın ve **HydraDX**'i seçin.
 
-<div style={{textAlign: 'center'}}>
+<div stili={{textAlign: 'center'}}>
   <img src={useBaseUrl('/polkadotjs-apps/public-1.png')} />
 </div>
 
-Select one of the nodes and click **Switch**.
+Düğümlerden birini seçin ve **Değiştir**'e tıklayın.
 
-<div style={{textAlign: 'center'}}>
+<div stili={{textAlign: 'center'}}>
   <img src={useBaseUrl('/polkadotjs-apps/public-2.png')} />
 </div>
 
-Now you should be connected to the selected public RPC node.
+Şimdi seçilen genel RPC düğümüne bağlanmalısınız.
