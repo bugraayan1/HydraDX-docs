@@ -1,147 +1,149 @@
 ---
-id: start_validating 
-title: Become a Validator
+kimlik: start_validating
+başlık: Doğrulayıcı Olun
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+useBaseUrl dosyasını '@docusaurus/useBaseUrl'den içe aktarın;
 
-After [setting up your HydraDX node](/node_setup), you need to bond HDX tokens and set the validator keys before you can start validating.
+[HydraDX düğümünüzü kurduktan](/node_setup) sonra, doğrulamaya başlamadan önce HDX belirteçlerini bağlamanız ve doğrulayıcı anahtarlarını ayarlamanız gerekir.
 
-:::warning
+:::uyarı
 
-Running a validator node requires a certain technical skillset needed for the proper setup of the node, and for guaranteeing its uptime. We also require validators to be always running the node using the latest stable release. If you are not sure what you are doing here, we recommend that you [nominate your HDX](/start_nominating) to an experienced validator instead. By doing so, you protect yourself and your nominators against an involuntary loss of funds.
-
-:::
-
-## 01 Bond HDX tokens {#01-bond-hdx-tokens}
-
-In order to take part at the network as a validator node, you need to bond some amount of HDX tokens. If you do not have any HDX, it is not possible to participate in the _initial_ stage of the testnet. However, some exciting news will be announced by the team in the upcoming weeks so stay posted and subscribe to our newsletter.
-
-:::note
-
-Are you still in possession of xHDX tokens that you bought during the Balancer LBP event? You first need to [claim your HDX](/claim) before continuing.
+Doğrulayıcı düğümü çalıştırmak, düğümün doğru kurulumu ve çalışma süresini garanti etmek için gereken belirli bir teknik beceri seti gerektirir. Ayrıca, doğrulayıcıların her zaman en son kararlı sürümü kullanarak düğümü çalıştırmasını şart koşuyoruz. Burada ne yaptığınızdan emin değilseniz, bunun yerine deneyimli bir doğrulayıcıya [HDX'inizi aday göstermenizi](/start_nomination) öneririz. Bunu yaparak, kendinizi ve aday gösterenlerinizi, istem dışı bir fon kaybına karşı korursunuz.
 
 :::
 
-To bond HDX, open Polkadot/apps, and connect to one of the [public HydraDX RPC nodes](/polkadotjs_apps_public). Make sure that you can see your account [balance](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-01.snakenet.hydradx.io#/accounts).
+## 01 Bond HDX belirteçleri {#01-bond-hdx-belirteçleri}
 
-:::warning
+Ağda doğrulayıcı düğüm olarak yer almak için bir miktar HDX jetonunu bağlamanız gerekir. Herhangi bir HDX'iniz yoksa, testnet'in _initial_ aşamasına katılmanız mümkün değildir. Bununla birlikte, önümüzdeki haftalarda ekip tarafından bazı heyecan verici haberler duyurulacak, bu nedenle haberdar olun ve bültenimize abone olun.
 
-Bonded HDX tokens are at stake for guaranteeing the security of the network. Improper behavior of the validator node may be punished by slashing which can lead to an involuntary loss of funds. We strongly recommend that you only proceed if you really know what you are doing.
+:::Not
+
+Balancer LBP etkinliği sırasında satın aldığınız xHDX jetonlarına hâlâ sahip misiniz? Devam etmeden önce [HDX'inizi talep etmeniz](/claim) gerekir.
 
 :::
 
-For the next step, go to *Network* > *Staking* > *Account actions* > *+ Stash*
+HDX'i bağlamak için Polkadot/apps'i açın ve [genel HydraDX RPC düğümlerinden](/polkadotjs_apps_public) birine bağlanın. Hesabınızı [bakiye](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-01.snakenet.hydradx.io#/accounts) görebildiğinizden emin olun.
 
-<div style={{textAlign: 'center'}}>
+:::uyarı
+
+Ağın güvenliğini garanti etmek için bağlı HDX belirteçleri tehlikede. Doğrulayıcı düğümün uygunsuz davranışı, istemsiz bir fon kaybına yol açabilecek kesme ile cezalandırılabilir. Yalnızca ne yaptığınızı gerçekten biliyorsanız ilerlemenizi şiddetle tavsiye ederiz.
+
+:::
+
+Bir sonraki adım için *Ağ* > *Stake* > *Hesap işlemleri* > *+ Zula* seçeneğine gidin
+
+<div stili={{textAlign: 'center'}}>
   <img src={useBaseUrl('/validator-guide/bond-hdx-1.png')} />
 </div>
 
-After clicking the Stash button, you should see the bonding preferences with four editable fields:
-* **stash account**: the account holding the majority of your HDX tokens. HDX will be staked from this account.
-* **controller account**: an account holding a smaller portion of HDX needed to cover the fees associated with starting and stopping the process of validating.
-* **value bonded**: the amount of HDX you are bonding. Do not bond all HDX that you have - instead, leave some to cover the transaction fees which occur later.
-* **payment destination**: the account to which the validating rewards will be sent.
+Stash düğmesine tıkladıktan sonra, dört düzenlenebilir alanla birleştirme tercihlerini görmelisiniz:
+* **saklama hesabı**: HDX jetonlarınızın çoğunluğunu tutan hesap. HDX bu hesaptan stake edilecektir.
+* **kontrolör hesabı**: doğrulama sürecini başlatmak ve durdurmakla ilgili ücretleri karşılamak için gereken HDX'in daha küçük bir bölümünü tutan bir hesap.
+* **bağlı değer**: bağladığınız HDX miktarı. Sahip olduğunuz tüm HDX'leri bağlamayın - bunun yerine daha sonra oluşacak işlem ücretlerini karşılamak için biraz bırakın.
+* **ödeme hedefi**: doğrulayan ödüllerin gönderileceği hesap.
 
-:::warning
+:::uyarı
 
-Do not bond all your available HDX tokens. Leave a small reserve for covering the transactions fees. If you bond all HDX tokens that you have, you may not be able to sign the transaction for starting the validation process.
-
-:::
-
-After adjusting the bonding preferences, click _Bond_ and sign transaction to complete the bonding process.
-
-:::caution
-
-For security reasons, it is not recommended to have the same Stash and Controller accounts. However, since transfers are disabled on Snakenet, it is currently not possible to use separate accounts. We highly recommend that you switch to separate Stash and Controller accounts as soon as this becomes possible in the future.
+Mevcut tüm HDX belirteçlerinizi bağlamayın. İşlem ücretlerini karşılamak için küçük bir rezerv bırakın. Sahip olduğunuz tüm HDX belirteçlerini bağlarsanız, doğrulama sürecini başlatmak için işlemi imzalayamayabilirsiniz.
 
 :::
 
-<div style={{textAlign: 'center'}}>
+Bonding tercihlerini ayarladıktan sonra, bonding işlemini tamamlamak için _Bond_'a tıklayın ve işlemi imzalayın.
+
+:::Dikkat
+
+Güvenlik nedeniyle, aynı Stash ve Controller hesaplarına sahip olmanız önerilmez. Ancak Snakenet'te transferler devre dışı bırakıldığı için şu anda ayrı hesaplar kullanmak mümkün değil. Gelecekte bu mümkün olur olmaz ayrı Stash ve Controller hesaplarına geçmenizi şiddetle tavsiye ederiz.
+
+:::
+
+<div stili={{textAlign: 'center'}}>
   <img src={useBaseUrl('/validator-guide/bond-hdx-2.png')} />
 </div>
 
-## 02 Generate session keys {#02-generate-session-keys}
+## 02 Oturum anahtarları oluşturun {#02-generate-session-keys}
 
-The second step is to generate your session keys. The session keys are used to associate the validator node with your Controller account and the staked HDX. It is therefore important that they are set up correctly.
+İkinci adım, oturum anahtarlarınızı oluşturmaktır. Oturum anahtarları, doğrulayıcı düğümünü Denetleyici hesabınız ve stake edilen HDX ile ilişkilendirmek için kullanılır. Bu nedenle doğru şekilde kurulmaları önemlidir.
 
-To generate your session keys, run on the node:
+Oturum anahtarlarınızı oluşturmak için düğümde çalıştırın:
 
 ```bash
-$ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9933
+$ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http:/ /localhost:9933
 
-# Example output
-{"jsonrpc":"2.0","result":"0x9257c7a88f94f858a6f477743b4180f0c9a0630a1cea85c3f47dc6ca78e503767089bebe02b18765232ecd67b35a7fb18fc3027613840f27aca5a5cc300775391cf298af0f0e0342d0d0d873b1ec703009c6816a471c64b5394267c6fc583c31884ac83d9fed55d5379bbe1579601872ccc577ad044dd449848da1f830dd3e45","id":1}
+# Örnek çıktı
+{ "Jsonrpc": "2.0", "Sonuç": "0x9257c7a88f94f858a6f477743b4180f0c9a0630a1cea85c3f47dc6ca78e503767089bebe02b18765232ecd67b35a7fb18fc3027613840f27aca5a5cc300775391cf298af0f0e0342d0d0d873b1ec703009c6816a471c64b5394267c6fc583c31884ac83d9fed55d5379bbe1579601872ccc577ad044dd449848da1f830dd3e45", "kimlik": 1}
 ```
 
-You can find your session keys under the _result_ part of the output (`0x9257...` in the example output above).
+Oturum anahtarlarınızı çıktının _result_ bölümünün altında bulabilirsiniz (yukarıdaki örnek çıktıda `0x9257...`).
 
-## 03 Set your session keys {#03-set-your-session-keys}
+## 03 Oturum anahtarlarınızı ayarlayın {#03-oturumunuzu-anahtarlarınızı} ayarlayın
 
-To associate the generated session keys with your Controller account, navigate to the following menu item in the Polkadot/apps:
-*Developer* > *Extrinsics*
+Oluşturulan oturum anahtarlarını Denetleyici hesabınızla ilişkilendirmek için Polkadot/uygulamalarda aşağıdaki menü öğesine gidin:
+*Geliştirici* > *Dışsal Özellikler*
 
-Fill in the fields:
+Alanları doldurun:
 
-* _using selected account_: select your Controller account;
-* _submit the following extrinsic_: select `session` on the left side and `setKeys` on the right;
-* _keys_: enter your session keys from the previous step;
-* _proof_: `0`.
+* _seçilen hesabı kullanarak_: Denetleyici hesabınızı seçin;
+* _şu dışsal iletiyi gönderin: sol tarafta 'oturum'u ve sağ tarafta 'setKeys'i seçin;
+* _keys_: önceki adımdaki oturum anahtarlarınızı girin;
+* _kanıt_: "0".
 
-To complete, click _Submit Transaction_ and sign the transaction.
+Tamamlamak için _İşlemi Gönder_'i tıklayın ve işlemi imzalayın.
 
-<div style={{textAlign: 'center'}}>
+<div stili={{textAlign: 'center'}}>
   <img src={useBaseUrl('/validator-guide/set-session-keys-1.png')} />
 </div>
 
-## 04 Make sure that your node is fully synced {#04-make-sure-that-your-node-is-fully-synced}
+## 04 Düğümünüzün fu olduğundan emin olun
 
-Before you continue, you should make sure that your node is running and that the synchronization process is fully complete. The most certain way to check the state of synchronization is directly on the node itself:
+lly senkronize edildi {#04-düğümünüzün-tamamen senkronize edildiğinden emin olun}
+
+Devam etmeden önce, düğümünüzün çalıştığından ve senkronizasyon işleminin tam olarak tamamlandığından emin olmalısınız. Senkronizasyon durumunu kontrol etmenin en kesin yolu doğrudan düğümün kendisindedir:
 
 ```bash
 
-$ journalctl -f -u hydradx-validator.service
+$ Journalctl -f -u hidradx-validator.service
 
-# The output will be similar to this
-Mar 22 18:37:38 Ubuntu-2010-groovy-64-minimal hydra-dx[232761]: 2021-03-22 18:37:38  💤 
-Idle (52 peers), best: #622028 (0x5f5a…1041), finalized #622025 (0x5b21…a746), ⬇ 9.1kiB/s ⬆ 6.1kiB/s
+# Çıktı buna benzer olacak
+22 Mart 18:37:38 Ubuntu-2010-groovy-64-minimal hydra-dx[232761]: 2021-03-22 18:37:38 💤
+Boşta (52 eş), en iyi: #622028 (0x5f5a…1041), kesinleştirildi #622025 (0x5b21…a746), ⬇ 9.1kiB/s ⬆ 6.1kiB/s
 
 ```
 
-You can compare the block number from the output (in the example above: `#622025`) with the current block number which you can find in [Polkadot/apps Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-01.snakenet.hydradx.io#/explorer). At the time of writing, the current block is `#622240`, meaning that the node used for the example is not fully synced.
+Çıktıdaki blok numarasını (yukarıdaki örnekte: "#622025") [Polkadot/apps Explorer](https://polkadot.js.org/apps/? rpc=wss%3A%2F%2Frpc-01.snakenet.hydradx.io#/explorer). Yazma sırasında, mevcut blok "#622240" şeklindedir, bu, örnek için kullanılan düğümün tam olarak senkronize edilmediği anlamına gelir.
 
-Please wait until the block number shown in your local logs matches the current block number of the network.
+Lütfen yerel günlüklerinizde gösterilen blok numarası ağın mevcut blok numarasıyla eşleşene kadar bekleyin.
 
-## 05 Start validating {#05-start-validating}
+## 05 Doğrulamaya başlayın {#05-start-validating}
 
-To start validating, navigate in Polkadot/apps:
+Doğrulamaya başlamak için Polkadot/apps'de gezinin:
 
-*Network* > *Staking* > *Account actions* > *Validate* (button next to your bonded HDX)
+*Ağ* > *Stake* > *Hesap işlemleri* > *Doğrula* (bağlı HDX'inizin yanındaki düğme)
 
-<div style={{textAlign: 'center'}}>
+<div stili={{textAlign: 'center'}}>
   <img src={useBaseUrl('/validator-guide/validate-1.png')} />
 </div>
 
-After clicking on the *Validate* button you should see a popup called *set validator preferences*. Here, you need to set your _reward commission percentage_. This is the proportion of the rewards which will be paid out to you. The remaining rewards will be split across your nominators in accordance with their stake. If you decide to not take any reward commission, you can set the percentage to 0.
+*Doğrula* düğmesine tıkladıktan sonra *doğrulayıcı tercihlerini ayarla* adlı bir açılır pencere görmelisiniz. Burada, _ödül komisyon yüzdenizi_ ayarlamanız gerekir. Bu, size ödenecek ödüllerin oranıdır. Kalan ödüller, adaylarınız arasında paylarına göre paylaştırılacaktır. Herhangi bir ödül komisyonu almamaya karar verirseniz, yüzdeyi 0 olarak ayarlayabilirsiniz.
 
-To confirm, click *Validate* and sign the transaction.
+Onaylamak için *Onayla*'ya tıklayın ve işlemi imzalayın.
 
-<div style={{textAlign: 'center'}}>
+<div stili={{textAlign: 'center'}}>
   <img src={useBaseUrl('/validator-guide/validate-2.png')} />
 </div>
 
-## 06 Check the status of your validator node {#06-check-the-status-of-your-validator-node}
+## 06 Doğrulayıcı düğümünüzün durumunu kontrol edin {#06-doğrulayıcı düğümünüzün durumunu kontrol edin}
 
-You can check the status of your validator node in the Polkadot/apps under:
+Doğrulayıcı düğümünüzün durumunu aşağıdaki Polkadot/uygulamalarda kontrol edebilirsiniz:
 
-*Network* > *Staking* > *Staking overview*
+*Ağ* > *Stake* > *Stake'e genel bakış*
 
-This tab provides an overview of all active validators connected to the network. At the top, there is an indication of the amount of validator slots available, as well as the number of nodes that have signaled their intention to be a validator. You can confirm whether your node is in the waiting queue by clicking on the _Waiting_ tab.
+Bu sekme, ağa bağlı tüm aktif doğrulayıcılara genel bir bakış sağlar. En üstte, mevcut doğrulayıcı yuvalarının miktarının yanı sıra doğrulayıcı olma niyetlerini bildiren düğümlerin sayısının bir göstergesi vardır. _Bekliyor_ sekmesine tıklayarak düğümünüzün bekleme kuyruğunda olup olmadığını onaylayabilirsiniz.
 
-Your validator node will remain in the waiting queue until it has been selected to be included in the validator set. The validator set is updated every era which allows for new nodes to be included, provided there are empty slots.
+Doğrulayıcı düğümünüz, doğrulayıcı kümesine dahil edilmek üzere seçilene kadar bekleme kuyruğunda kalacaktır. Doğrulayıcı seti, boş yuvalar olması koşuluyla, yeni düğümlerin dahil edilmesine izin veren her dönemde güncellenir.
 
-<div style={{textAlign: 'center'}}>
+<div stili={{textAlign: 'center'}}>
   <img src={useBaseUrl('/validator-guide/validate-3.png')} />
 </div>
 
-Thank you for supporting HydraDX by becoming a Snakenet validator! 🎉
+Snakenet doğrulayıcısı olarak HydraDX'i desteklediğiniz için teşekkür ederiz! 🎉
