@@ -6,10 +6,10 @@ slug: /
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Welcome to the official HydraDX Docs! Here you can find all kinds of useful resources on the HydraDX protocol. Our intention is to make this a great place for everyone, covering the full spectrum between casual visitors, validators, nominators and developers who want to help build HydraDX.
+Resmi HydraDX Dokümanlarına hoş geldiniz! Burada HydraDX protokolü ile ilgili her türlü faydalı kaynağı bulabilirsiniz. Amacımız burayı HydraDX'in oluşturulmasına yardımcı olmak isteyen sıradan ziyaretçiler, doğrulayıcılar, aday gösterenler ve geliştiriciler arasındaki tüm yelpazeyi kapsayan herkes için harika bir yer haline getirmektir.
 
-HydraDX is community-driven and so are these Docs. We are happy to see your contributions, which can take various shapes - for example, you could write a new article or translate an existing one. Check out our [GitHub repo](https://github.com/galacticcouncil/HydraDX-docs) as well as some [contribution guidelines](/contributing).
+HydraDX topluluk odaklıdır ve bu dokümanlar da aynı şekilde düşünülmüştür. Çeşitli şekiller alabilen katkılarınızı görmekten mutluluk duyuyoruz - örneğin, yeni bir makale yazabilir veya mevcut bir makaleyi çevirebilirsiniz. [GitHub depomuza](https://github.com/galacticcouncil/HydraDX-docs) ve bazı [katkı yönergelerimize](/contributing) göz atın.
 
-## What is HydraDX? {#what-is-hydradx}
+## HydraDX nedir? {#hidradx nedir}
 
-HydraDX is a cross-chain liquidity protocol built on Substrate. Our mission is to enable frictionless liquidity for all cryptoassets by building the first of its kind multi-asset liquidity pool - the HydraDX Omnipool. In the Omnipool, various assets аrе priced against each other by using our native token HDX as a proxy for determining their relative value. With the Omnipool, HydraDX breaks with the traditional conception according to which assets are traded in pairs using isolated pools. Besides that, we are happy to be part of the Polkadot ecosystem and are looking forward to become the go-to liquidity provider for all assets built on Substrate.
+HydraDX, Substrate üzerine kurulu bir çapraz zincir likidite protokolüdür. Misyonumuz, türünün ilk örneği olan çok varlıklı likidite havuzu olan HydraDX Omnipool'u oluşturarak tüm kripto varlıklar için sorunsuz likidite sağlamaktır. Omnipool'da, çeşitli varlıklar, göreceli değerlerini belirlemek için bir vekil olarak yerel simgemiz HDX kullanılarak birbirlerine karşı fiyatlandırılır. Omnipool ile HydraDX, varlıkların izole havuzlar kullanılarak çiftler halinde alınıp satıldığı geleneksel anlayışı kırar. Bunun yanı sıra, Polkadot ekosisteminin bir parçası olmaktan mutluyuz ve Substrate üzerine kurulu tüm varlıklar için likidite sağlayıcısı olmayı dört gözle bekliyoruz.
