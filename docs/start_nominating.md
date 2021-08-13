@@ -1,175 +1,171 @@
+kimlik: start_nominasyon
+başlık: Aday Olun
 ---
-id: start_nominating
-title: Become a Nominator
----
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+useBaseUrl dosyasını '@docusaurus/useBaseUrl'den içe aktarın;
 
-By becoming a nominator, you stake some of your HDX tokens to help secure the HydraDX network and to earn rewards. Unlike running a validator node, the process of nominating does not require advanced technical skills, making it the recommended choice for anyone who is not fully confident with becoming a validator.
+Aday olarak, HydraDX ağının güvenliğini sağlamaya ve ödüller kazanmaya yardımcı olmak için HDX jetonlarınızdan bazılarını stake edersiniz. Bir doğrulayıcı düğüm çalıştırmanın aksine, aday gösterme süreci ileri teknik beceriler gerektirmez, bu da onu doğrulayıcı olma konusunda tam olarak emin olmayan herkes için önerilen seçim haline getirir.
 
-When nominating, nominators appoint their stake to a validator of their choice. By doing so, nominators elect the active set of validators and receive rewards for their participation. The amount of awards you receive as a nominator depends on the reward commission percentage of the chosen validator - the higher the reward commission of the validator, the less rewards you will be receiving for your stake.
+Aday gösterirken, adaylar paylarını kendi seçtikleri bir doğrulayıcıya atar. Bunu yaparak, adaylar aktif doğrulayıcı grubunu seçer ve katılımları için ödüller alırlar. Aday olarak aldığınız ödüllerin miktarı, seçilen doğrulayıcının ödül komisyonu yüzdesine bağlıdır - doğrulayıcının ödül komisyonu ne kadar yüksek olursa, bahis tutarınız için o kadar az ödül alırsınız.
 
-:::warning
+:::uyarı
 
-Nominating is a more accessible form of participation in the staking process, however it also carries a certain degree of risk. If the validator you have nominated misbehaves (e.g. fails to maintain the required uptime), slashing can occur which may lead to a partial involuntary loss of the funds you have staked. We highly recommend that you do your due diligence before nominating a validator.
+Aday gösterme, stake sürecine katılımın daha erişilebilir bir şeklidir, ancak aynı zamanda belirli bir derecede risk de taşır. Aday gösterdiğiniz doğrulayıcı uygunsuz davranırsa (örn. Bir doğrulayıcıyı aday göstermeden önce gerekli özeni göstermenizi önemle tavsiye ederiz.
 
 :::
 
-## 00 Staking UI {#00-staking-ui}
+## 00 Staking Arayüzü {#00-stake-ui}
 
-To access the staking interface, you first need to open the Polkadot/apps, connect it to one of the [public HydraDX RPC nodes](/polkadotjs_apps_public) and make sure that you can see your account [balance](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-01.snakenet.hydradx.io#/accounts)
+Stake etme arayüzüne erişmek için önce Polkadot/apps'i açmanız, onu [genel HydraDX RPC düğümlerinden](/polkadotjs_apps_public) birine bağlamanız ve hesabınızı [bakiye](https://polkadot) görebildiğinizden emin olmanız gerekir. .js.org/apps/?rpc=wss%3A%2F%2Frpc-01.snakenet.hydradx.io#/accounts)
 
-:::note
+:::Not
 
-Are you still in possession of xHDX tokens that you bought during the Balancer LBP event? You first need to [claim your HDX](/claim) before continuing.
-
-:::
-
-After verifying that you can see your HDX balance, you can navigate to the Staking UI:
-
-*Network* > *Staking*
-
-The Staking UI has the following menu tabs:
-
-* **Staking overview**: here, you will find a list of all active validators and some basic information about each validator, such as the amount of HDX staked on the node, the amount of the validator's own stake, and how much reward commission is charged. Furthermore, you can see the number of era points earned by each validator in the current era and the number of the last block produced by the validator.
-* **Account actions**: here, you can stake and nominate.
-* **Payouts**: here, you can claim your staking rewards.
-* **Targets**: here, you can estimate your earnings. This is a good place to start when picking a validator node to nominate.
-* **Waiting**: here, you can find the waiting queue where inactive validators are placed before being included in the active validator set. A validator will remain in the waiting queue until it has received a sufficient amount of staked HDX to enter the active validator set.
-* **Validator stats**: here, you can query a validator's stash address to see detailed historical information about earned era points, elected stake, rewards, and slashes. We highly recommend that you study this information before trusting a validator with your nomination.
-
-## 01 Bond HDX tokens {#01-bond-hdx-tokens}
-
-:::warning
-
-Bonded HDX tokens are at stake for guaranteeing the security of the network. Improper behavior of the validator node you have nominated may be punished by slashing which can lead to an involuntary loss of your funds. We strongly recommend that you do your due diligence when selecting which validator to nominate.
+Balancer LBP etkinliği sırasında satın aldığınız xHDX jetonlarına hâlâ sahip misiniz? Devam etmeden önce [HDX'inizi talep etmeniz](/claim) gerekir.
 
 :::
 
-To bond HDX tokens, navigate to *Account actions* in the Staking UI:
+HDX bakiyenizi görebildiğinizi doğruladıktan sonra, Stake Kullanıcı Arayüzüne gidebilirsiniz:
 
-*Network* > *Staking* > *Account actions* > *+ Stash*
+*Ağ* > *Stake*
 
-<div style={{textAlign: 'center'}}>
+Stake Kullanıcı Arayüzü aşağıdaki menü sekmelerine sahiptir:
+
+* **Stake genel bakış**: burada, tüm aktif doğrulayıcıların bir listesini ve düğümde stake edilen HDX miktarı, doğrulayıcının kendi hissesinin miktarı ve ne kadar ödül gibi her bir doğrulayıcı hakkında bazı temel bilgileri bulacaksınız. komisyon alınır. Ayrıca, geçerli çağda her bir doğrulayıcı tarafından kazanılan çağ puanlarının sayısını ve doğrulayıcı tarafından üretilen son bloğun sayısını görebilirsiniz.
+* **Hesap işlemleri**: burada stake edebilir ve aday gösterebilirsiniz.
+* **Ödemeler**: burada stake ödüllerinizi talep edebilirsiniz.
+* **Hedefler**: Burada kazançlarınızı tahmin edebilirsiniz. Bu, aday göstermek için bir doğrulayıcı düğümü seçerken başlamak için iyi bir yerdir.
+* **Bekliyor**: burada, etkin olmayan doğrulayıcı setine dahil edilmeden önce etkin olmayan doğrulayıcıların yerleştirildiği bekleme kuyruğunu bulabilirsiniz. Doğrulayıcı, etkin doğrulayıcı setine girmek için yeterli miktarda stake edilmiş HDX alana kadar bekleme kuyruğunda kalacaktır.
+* **Doğrulayıcı istatistikleri**: burada, kazanılan dönem puanları, seçilen bahis miktarı, ödüller ve eğik çizgiler hakkında ayrıntılı geçmiş bilgileri görmek için bir doğrulayıcının saklama adresini sorgulayabilirsiniz. Adaylığınız için bir doğrulayıcıya güvenmeden önce bu bilgileri incelemenizi önemle tavsiye ederiz.
+
+## 01 Bond HDX belirteçleri {#01-bond-hdx-belirteçleri}
+
+:::uyarı
+
+Ağın güvenliğini garanti etmek için bağlı HDX belirteçleri tehlikede. Aday gösterdiğiniz doğrulayıcı düğümün uygun olmayan davranışı, paranızın istemsiz olarak kaybedilmesine yol açabilecek kesinti ile cezalandırılabilir. Hangi doğrulayıcıyı aday göstereceğinizi seçerken gerekli özeni göstermenizi şiddetle tavsiye ederiz.
+
+:::
+
+HDX jetonlarını bağlamak için Stake Kullanıcı Arayüzündeki *Hesap işlemleri* bölümüne gidin:
+
+*Ağ* > *Stake* > *Hesap işlemleri* > *+ Stash*
+
+<div stili={{textAlign: 'center'}}>
   <img src={useBaseUrl('/nominator-guide/bond-hdx-1.png')} />
 </div>
 
-After clicking the *Stash* button, you should see the bonding preferences with four editable fields:
-* **stash account**: the account holding the majority of your HDX tokens. HDX will be staked from this account.
-* **controller account**: the account holding a smaller portion of HDX needed to cover the fees associated with starting and stopping the process of nominating.
-* **value bonded**: the amount of HDX you are bonding. Do not bond all HDX that you have - instead, leave some to cover the transaction fees which occur later.
-* **payment destination**: the account to which the staking rewards will be sent.
+*Stash* düğmesine tıkladıktan sonra, dört düzenlenebilir alanla birleştirme tercihlerini görmelisiniz:
+* **saklama hesabı**: HDX jetonlarınızın çoğunluğunu tutan hesap. HDX bu hesaptan stake edilecektir.
+* **kontrolör hesabı**: aday gösterme sürecinin başlatılması ve durdurulmasıyla ilgili ücretleri karşılamak için gereken HDX'in daha küçük bir kısmına sahip olan hesap.
+* **bağlı değer**: bağladığınız HDX miktarı. Sahip olduğunuz tüm HDX'leri bağlamayın - bunun yerine daha sonra oluşacak işlem ücretlerini karşılamak için biraz bırakın.
+* **ödeme hedefi**: stake ödüllerinin gönderileceği hesap.
 
-:::warning
+:::uyarı
 
-Do not bond all your available HDX tokens. Leave a small reserve for covering the transactions fees. If you bond all HDX tokens that you have, you may not be able to sign the transaction for starting the nomination process.
-
-:::
-
-After adjusting the bonding preferences, click **Bond** and sign transaction to complete the bonding process.
-
-:::caution
-
-For security reasons, it is not recommended to have the same Stash and Controller accounts. However, since transfers are disabled on Snakenet, it is currently not possible to use separate accounts. We highly recommend that you switch to separate Stash and Controller accounts as soon as this becomes possible in future.
+Mevcut tüm HDX belirteçlerinizi bağlamayın. İşlem ücretlerini karşılamak için küçük bir rezerv bırakın. Sahip olduğunuz tüm HDX jetonlarını bağlarsanız, adaylık sürecini başlatmak için işlemi imzalayamayabilirsiniz.
 
 :::
 
-<div style={{textAlign: 'center'}}>
+Bonding tercihlerini ayarladıktan sonra **Bond**'a tıklayın ve bonding işlemini tamamlamak için işlemi imzalayın.
+
+:::Dikkat
+
+Güvenlik nedeniyle, aynı Stash ve Controller hesaplarına sahip olmanız önerilmez. Ancak Snakenet'te transferler devre dışı bırakıldığı için şu anda ayrı hesaplar kullanmak mümkün değil. Fu'da bu mümkün olur olmaz ayrı Stash ve Controller hesaplarına geçmenizi şiddetle tavsiye ederiz.
+
+tur.
+
+:::
+
+<div stili={{textAlign: 'center'}}>
   <img src={useBaseUrl('/nominator-guide/bond-hdx-2.png')} />
 </div>
 
-## 02 Nominate a validator {#02-nominate-a-validator}
+## 02 Doğrulayıcıyı aday göster {#02-nominate-a-validator}
 
-After bonding HDX, you can now nominate a validator. Before proceeding, you should do your due diligence and decide which validators you would like to nominate based on their (past) performance. To do so, refer to the information in the Staking UI [discussed above](#00-staking-ui).
+HDX'i bağladıktan sonra artık bir doğrulayıcı atayabilirsiniz. Devam etmeden önce, gerekli özeni göstermeli ve (geçmiş) performanslarına göre hangi doğrulayıcıları aday göstermek istediğinize karar vermelisiniz. Bunu yapmak için Stake Kullanıcı Arayüzündeki [yukarıda tartışılan](#00-stake-ui) bilgilere bakın.
 
-:::note
+:::Not
 
-HydraDX Snakenet has a **limit of 64 nominators per validating node**. When selecting a node to nominate, make sure that the validator has not reached the maximum amount of nominations, otherwise your nomination will be invalid and you will not receive rewards for your stake. The number of nominations for every validator can be found in the *Waiting* menu tab in the Staking UI.
+HydraDX Snakenet'in **doğrulama düğümü başına 64 aday gösterme sınırı vardır**. Aday göstermek için bir düğüm seçerken, doğrulayıcının maksimum adaylık sayısına ulaşmadığından emin olun, aksi takdirde adaylığınız geçersiz olur ve bahis tutarınız için ödül alamazsınız. Her doğrulayıcı için aday sayısı, Stake Kullanıcı Arayüzündeki *Bekliyor* menü sekmesinde bulunabilir.
 
 :::
 
-To nominate one or more validators, navigate to:
+Bir veya daha fazla doğrulayıcıyı aday göstermek için şuraya gidin:
 
-*Network* > *Staking* > *Account actions* > *Nominate* (button next to your bonded HDX)
+*Ağ* > *Stake* > *Hesap işlemleri* > *Aday* (bağlı HDX'inizin yanındaki düğme)
 
-<div style={{textAlign: 'center'}}>
+<div stili={{textAlign: 'center'}}>
   <img src={useBaseUrl('/nominator-guide/nominate-validator-1.png')} />
 </div>
 
-After clicking on the *Nominate* button you should see a popup called *nominate validators*. Here you can select one or more validators to nominate from the list of available validators. It is highly recommended to nominate multiple validators to prevent being inactive if you don't get a spot in one validator (e.g. the validator is overcrowded or not elected into the active validator set). You can nominate up to 16 validators. In every era just one of your nominations can be active, you cannot be chosen by multiple validators simultaneously. Your stake will be automatically assigned to one of your selected validators in a way to maximize decentralization and profits. You just chose the amount of bonded HDX and the validators you trust.
+*Aday* düğmesine tıkladıktan sonra *nominate validators* adlı bir açılır pencere görmelisiniz. Burada, mevcut doğrulayıcılar listesinden aday göstermek için bir veya daha fazla doğrulayıcı seçebilirsiniz. Bir doğrulayıcıda yer alamazsanız (örneğin, doğrulayıcı aşırı kalabalıksa veya aktif doğrulayıcı grubuna seçilmemişse) etkin olmamayı önlemek için birden fazla doğrulayıcı atamanız önemle tavsiye edilir. En fazla 16 doğrulayıcı aday gösterebilirsiniz. Her çağda adaylarınızdan sadece biri aktif olabilir, aynı anda birden fazla onaylayıcı tarafından seçilemezsiniz. Bahsiniz, ademi merkeziyetçiliği ve karı en üst düzeye çıkaracak şekilde seçtiğiniz doğrulayıcılardan birine otomatik olarak atanacaktır. Sadece bağlı HDX miktarını ve güvendiğiniz doğrulayıcıları seçtiniz.
 
-To nominate the selected validators, click _Nominate_ and sign the transaction.
+Seçilen doğrulayıcıları atamak için _Aday_'ı tıklayın ve işlemi imzalayın.
 
-<div style={{textAlign: 'center'}}>
+<div stili={{textAlign: 'center'}}>
   <img src={useBaseUrl('/nominator-guide/nominate-validator-2.png')} />
 </div>
 
 
-## 03 Check the status of your nominations {#03-check-the-status-of-your-nominations}
+## 03 Adaylarınızın durumunu kontrol edin {#03-adaylarınızın durumunu kontrol edin}
 
-After completing the nominating process, your nominations will be inactive for the remainder of the current era. Once the following era begins, your nominations will become active, provided that at least one of the validator nodes you have nominated is included in the active set of validators and is not overcrowded leaving you out. If all of your validators remain in the waiting queue, your respective nominations will remain inactive too and you will not earn any rewards for this era.
+Aday gösterme sürecini tamamladıktan sonra, adaylıklarınız mevcut dönemin geri kalanında etkin olmayacaktır. Bir sonraki dönem başladığında, aday gösterdiğiniz doğrulayıcı düğümlerinden en az birinin aktif doğrulayıcı grubuna dahil olması ve aşırı kalabalık olmaması ve sizi dışarıda bırakmaması koşuluyla, adaylıklarınız aktif hale gelecektir. Tüm doğrulayıcılarınız bekleme kuyruğunda kalırsa, ilgili adaylarınız da etkin olmayacak ve bu dönem için herhangi bir ödül kazanmayacaksınız.
 
-To check the status of your nominations, navigate to:
+Adaylıklarınızın durumunu kontrol etmek için şuraya gidin:
 
-*Network* > *Staking* > *Account actions*
+*Ağ* > *Stake* > *Hesap işlemleri*
 
-You can see your inactive nominations under *Waiting nominations*:
+Etkin olmayan adaylarınızı *Bekleyen adaylar*: altında görebilirsiniz.
 
-<div style={{textAlign: 'center'}}>
+<div stili={{textAlign: 'center'}}>
   <img src={useBaseUrl('/nominator-guide/nominate-validator-3.png')} />
 </div>
 
-Once a nomination becomes active, you should find it in the list of *Active nominations*
+Bir adaylık aktif hale geldiğinde, onu *Aktif adaylıklar* listesinde bulmalısınız.
 
-<div style={{textAlign: 'center'}}>
+<div stili={{textAlign: 'center'}}>
   <img src={useBaseUrl('/nominator-guide/nominate-validator-4.png')} />
-</div>  
+</div>
 
-:::note
+:::Not
 
-Make sure that you revisit your nominations once in a while. It is possible that some of your validators change their commission percentage which will have a negative impact on your rewards. By checking the status of your nominations frequently you will be able to react by updating the list of your nominated validators.
+Adaylıklarınızı arada bir gözden geçirdiğinizden emin olun. Onaylayıcılarınızdan bazılarının komisyon yüzdelerini değiştirmesi, ödülleriniz üzerinde olumsuz bir etkisi olabilir. Adaylarınızın durumunu sık sık kontrol ederek, aday gösterilen doğrulayıcılarınızın listesini güncelleyerek tepki verebileceksiniz.
 
 :::
 
-## 04 Adjust your nominations {#04-adjust-your-nominations}
+## 04 Adaylıklarınızı ayarlayın {#04-adaylarınızı ayarlayın}
 
-If some of your validators become oversubscribed or change their commission, you might want to adjust your nominations.
+Doğrulayıcılarınızdan bazıları fazla abone olursa veya komisyonlarını değiştirirse, adaylıklarınızı ayarlamak isteyebilirsiniz.
 
-To do so, open Polkadot/apps and navigate to:  
-*Network* > *Staking* > *Account actions*
+Bunu yapmak için Polkadot/apps'i açın ve şuraya gidin:
+*Ağ* > *Stake* > *Hesap işlemleri*
 
-Click on the three dots next to your account details and select _Set nominees_.
+Hesap ayrıntılarınızın yanındaki üç noktayı tıklayın ve _Aday belirle_'yi seçin.
 
-<div style={{textAlign: 'center'}}>
+<div stili={{textAlign: 'center'}}>
   <img src={useBaseUrl('/nominator-guide/nominate-set-nominees.png')} />
 </div>
 
-In the following window, that may already feel familiar, you can remove validators and/or add new ones.  
-Adjusting your nominations can be done on the fly, there is no need to stop nominating. The changes will be applied when the following era begins (24h).
+Aşağıdaki pencerede, zaten tanıdık gelebilir, doğrulayıcıları kaldırabilir ve/veya yenilerini ekleyebilirsiniz.
+Adaylıklarınızı anında ayarlayabilirsiniz, aday göstermeyi bırakmanıza gerek yoktur. Değişiklikler, bir sonraki dönem başladığında (24 saat) uygulanacaktır.
 
-<div style={{textAlign: 'center'}}>
+<div stili={{textAlign: 'center'}}>
   <img src={useBaseUrl('/nominator-guide/nominate-validator-2.png')} />
-</div>  
+</div>
 
-## 05 Rebond funds {#05-rebond-funds}
+## 05 Rebond fonları {#05-rebond-funds}
 
-If you have accidentally unbonded your HDX tokens, you can rebond them before the waiting period of 28 days has lapsed.
+HDX jetonlarınızın bağını yanlışlıkla çözdüyseniz, 28 günlük bekleme süresi dolmadan onları yeniden bağlayabilirsiniz.
 
-To do so, open Polkadot/apps and navigate to *Developer* > *Extrinsics*. Alternatively, you can follow this link:
+Bunu yapmak için Polkadot/apps'i açın ve *Developer* > *Extrinsics*'e gidin. Alternatif olarak, bu bağlantıyı takip edebilirsiniz:
 
 https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-01.snakenet.hydradx.io#/extrinsics
 
-Select your account in the _using the selected account_ dropdown.  After that, you need to fill out the following information:
+_Seçili hesabı kullanarak_ açılır menüsünde hesabınızı seçin. Bundan sonra, aşağıdaki bilgileri doldurmanız gerekir:
 
-* **extrinsic**: staking
-* **action**: rebond_value
-* **value**: here you need to enter the amount of HDX you want to rebond.
+* **dışsal**: bahis
+* **eylem**: rebond_value
+* **değer**: buraya yeniden bağlamak istediğiniz HDX miktarını girmeniz gerekir.
 
 
-<div style={{textAlign: 'center'}}>
-  <img src={useBaseUrl('/nominator-guide/rebond.png')} />
-</div>
-
-If everything is set correctly you can submit the extrinsic by clicking the _Submit Transaction_ button and sign the transaction in the Polkadot.js extension. Once completed, the selected amount of HDX should be rebonded.
-
-Thank you for supporting HydraDX by becoming a Snakenet nominator! 🎉
+<div stili={{textAlign: 'center'}}>
+  <img src={useBaseUrl('/nominator-guide
