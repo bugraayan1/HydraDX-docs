@@ -1,11 +1,11 @@
 ---
-id: performance_benchmark
-title: Performance Benchmark
+kimlik: performans_benchmark
+başlık: Performans Karşılaştırması
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+useBaseUrl dosyasını '@docusaurus/useBaseUrl'den içe aktarın;
 
-You can make sure that your machine satisfies the [required technical specifications](/node_setup#00-required-technical-specifications) by running a performance benchmark. To do so, follow the steps below:
+Bir performans karşılaştırması çalıştırarak makinenizin [gerekli teknik özellikleri](/node_setup#00-required-technical-specations) karşıladığından emin olabilirsiniz. Bunu yapmak için aşağıdaki adımları izleyin:
 
 ```bash
 # Fetch source of the latest stable release
@@ -28,7 +28,7 @@ $ apt install clang
 $ ./scripts/check_performance.sh
 ```
 
-After the benchmark executes you should see an output similar to the following:
+Kıyaslama yürütüldükten sonra aşağıdakine benzer bir çıktı görmelisiniz:
 
 ```
          Pallet          |   Time comparison (µs)    |  diff* (µs)   |   diff* (%)    |            |   Rerun
@@ -36,12 +36,12 @@ amm                      |     773.00 vs 680.00      |      93.00    |      12.0
 exchange                 |     804.00 vs 720.00      |      84.00    |      10.44     |     OK     |
 transaction_multi_payment|     218.00 vs 198.00      |      20.00    |       9.17     |     OK     |
 
-Notes:
-- in the diff fields you can see the difference between the reference benchmark time and the benchmark time of your machine
-- if diff is positive for all three pallets, your machine covers the minimum requirements for running a HydraDX node
-- if diff deviates by -10% or more for some of the pallets, your machine might not be suitable to run a node
+Notlar:
+- fark alanlarında makinenizin referans kıyaslama zamanı ile kıyaslama zamanı arasındaki farkı görebilirsiniz
+- üç paletin tümü için fark pozitifse, makineniz bir HydraDX düğümünü çalıştırmak için minimum gereksinimleri karşılar
+- bazı paletler için fark -%10 veya daha fazla sapma gösteriyorsa, makineniz bir düğümü çalıştırmak için uygun olmayabilir
 ```
 
-You can see the difference in the performance between your machine and the minimum required setup in the column **diff* (%)**. If all three values in this column are positive, your machine should be suitable to run a HydraDX validator node. If any of the values is below *-10 %*, we do not recommend running a HydraDX node.
+Makineniz ile gerekli minimum kurulum arasındaki performans farkını **fark* (%)** sütununda görebilirsiniz. Bu sütundaki üç değerin tümü pozitifse, makineniz bir HydraDX doğrulayıcı düğümü çalıştırmaya uygun olmalıdır. Değerlerden herhangi biri *-10 %*'un altındaysa, HydraDX düğümünün çalıştırılmasını önermeyiz.
 
-Join us at Discord if you would like to discuss your benchmark results, our community is always happy to help.
+Karşılaştırma sonuçlarınızı tartışmak isterseniz Discord'da bize katılın, topluluğumuz her zaman yardımcı olmaktan mutluluk duyar.
