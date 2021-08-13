@@ -1,40 +1,40 @@
 ---
-id: staking_rewards
-title: Staking Rewards
+kimlik: stake_rewards
+başlık: Stake Ödülleri
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+useBaseUrl dosyasını '@docusaurus/useBaseUrl'den içe aktarın;
 
-Staking rewards incentivize validators and nominators to [stake their HDX tokens](/staking). There are three types of staking rewards which are discussed in this article: [base rewards](#base-rewards), [era points](#era-points) and [tips](#tips).
+Stake ödülleri, doğrulayıcıları ve aday gösterenleri [HDX jetonlarını stake etmeye](/stake) teşvik eder. Bu makalede ele alınan üç tür bahis ödülü vardır: [temel ödüller](#temel ödüller), [era puanları](#era-puanları) ve [ipuçları](#ipuçları).
 
-:::note
-Staking rewards are not distributed automatically to the accounts of the validators and nominators. Instead, they must be [claimed by triggering a payout](/staking_claim_rewards).
+:::Not
+Stake ödülleri, doğrulayanların ve aday gösterenlerin hesaplarına otomatik olarak dağıtılmaz. Bunun yerine, [bir ödemeyi tetikleyerek hak talebinde bulunulmalıdır](/staking_claim_rewards).
 :::
 
-## Base Rewards {#base-rewards}
+## Temel Ödüller {#temel ödüller}
 
-At the end of every era (24h), all active validator pools receive base rewards in the form of HDX tokens. A validator pool consists of an elected validator (holding their self-staked HDX) and all active nominations which are backing the validator (for more information see [staking](/staking)). A central principle of the Nominated Proof-of-Stake (NPoS) consensus mechanism is that **equal work brings equal rewards**. In other words, since all validator pools essentially carry out the same work, **the available base rewards are divided equally** among them. This means that validator pools are **not** rewarded in proportion to their total stake, which is a major difference from traditional PoS networks.
+Her dönemin sonunda (24 saat), tüm aktif doğrulayıcı havuzları, HDX jetonları şeklinde temel ödüller alır. Doğrulayıcı havuzu, seçilmiş bir doğrulayıcıdan (kendi kendine bahis yapılan HDX'lerini elinde bulunduran) ve doğrulayıcıyı destekleyen tüm aktif adaylardan oluşur (daha fazla bilgi için bkz. [stake](/stake)). Nominated Proof-of-of-Stake (NPoS) konsensüs mekanizmasının temel bir ilkesi, **eşit çalışmanın eşit ödüller getirmesidir**. Diğer bir deyişle, tüm doğrulayıcı havuzları temelde aynı işi yaptığından, **mevcut temel ödüller aralarında eşit olarak bölünür**. Bu, doğrulayıcı havuzlarının, geleneksel PoS ağlarından önemli bir fark olan, toplam paylarıyla orantılı olarak **ödüllendirilmediği** anlamına gelir.
 
-The mechanism of sharing the base rewards equally among all participating validator pools contributes to the security of the network by preventing the concentration of power in a few validator pools, thereby strengthening decentralization. Over time, it incentivizes nominators to nominate validators with a smaller HDX stake. This process will eventually balance out the power relationships in the network and lead to a situation where all validator pools have roughly an equivalent amount of staked HDX.
+Temel ödüllerin tüm katılımcı doğrulayıcı havuzları arasında eşit olarak paylaşılması mekanizması, gücün birkaç doğrulayıcı havuzunda yoğunlaşmasını önleyerek ağın güvenliğine katkıda bulunur ve böylece ademi merkeziyetçiliği güçlendirir. Zamanla, adayları daha küçük bir HDX hissesiyle doğrulayıcıları aday göstermeye teşvik eder. Bu süreç sonunda ağdaki güç ilişkilerini dengeleyecek ve tüm doğrulayıcı havuzlarının kabaca eşdeğer miktarda stake edilmiş HDX'e sahip olduğu bir duruma yol açacaktır.
 
-The distribution of rewards takes place as follows. After calculating the (equal) amount of rewards for every validator pool, the validator receives its share in the form of **commission fees** for maintaining the node. As a second step, the remaining tokens are distributed among all stakes **proportionally** (including the self-stake of the validator). This means that higher stakes will receive a bigger proportion of the rewards which are attributed to the particular validator pool.
+Ödüllerin dağılımı şu şekilde gerçekleşir. Her doğrulayıcı havuzu için (eşit) ödül miktarını hesapladıktan sonra, doğrulayıcı, düğümün bakımı için **komisyon ücretleri** biçimindeki payını alır. İkinci adım olarak, kalan jetonlar tüm hisseler arasında **orantılı olarak** (doğrulayıcının kendi hissesi dahil) dağıtılır. Bu, daha yüksek bahislerin, belirli doğrulayıcı havuzuna atfedilen ödüllerin daha büyük bir kısmını alacağı anlamına gelir.
 
-:::note
-In our incentivized testnet called Snakenet, the amount of rewards received for staking your HDX tokens is estimated to be around **50% APY**.
+:::Not
+Snakenet adlı teşvikli test ağımızda, HDX jetonlarınızı stake etmek için alınan ödül miktarının **%50 APY** civarında olduğu tahmin edilmektedir.
 :::
 
-## Era points {#era-points}
+## Çağ noktaları {#dönem noktaları}
 
-Validators can earn additional rewards in proportion to the era points which they have gained in the past era. These rewards are added to the base rewards described above. Validators can earn era points by carrying out certain specific actions such as:
+Doğrulayıcılar, geçmiş dönemde kazandıkları dönem puanları ile orantılı olarak ek ödüller kazanabilirler. Bu ödüller, yukarıda açıklanan temel ödüllere eklenir. Doğrulayıcılar, aşağıdakiler gibi belirli belirli eylemleri gerçekleştirerek dönem puanları kazanabilirler:
 
-* producing a non-uncle block in the Relay Chain.
-* producing a reference to a previously unreferenced uncle block.
-* producing a referenced uncle block.
+* Röle Zincirinde amca olmayan bir blok üretmek.
+* daha önce referans verilmemiş bir amca bloğuna referans üretmek.
+* başvurulan bir amca bloğu üretmek.
 
-:::note
-An uncle block is a Relay Chain block valid in every regard, which however has failed to become canonical. This can happen when two or more validators are block producers in a single slot, and the block produced by one validator reaches the next block producer before the others. The lagging blocks are called uncle blocks.
+:::Not
+Amca bloğu, her bakımdan geçerli olan ancak kanonik hale gelememiş bir Relay Chain bloğudur. Bu, iki veya daha fazla doğrulayıcı tek bir yuvada blok üreticisi olduğunda ve bir doğrulayıcı tarafından üretilen blok diğerlerinden önce bir sonraki blok üreticisine ulaştığında olabilir. Gecikmeli bloklara amca blokları denir.
 :::
 
-## Tips {#tips}
+## İpuçları {#ipuçları}
 
-Finally, validators can earn tips which are also added to the base rewards at the end of every era. Tips represent an additional transaction fee that can be optionally paid by users to give their transaction a higher priority.
+Son olarak, doğrulayıcılar, her dönemin sonunda temel ödüllere de eklenen ipuçları kazanabilirler. İpuçları, işlemlerine daha yüksek bir öncelik vermek için isteğe bağlı olarak kullanıcılar tarafından ödenebilecek ek bir işlem ücretini temsil eder.
